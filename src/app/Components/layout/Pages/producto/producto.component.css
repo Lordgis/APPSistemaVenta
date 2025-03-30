@@ -1,0 +1,31 @@
+table{
+    width: 100%;
+}
+
+.mat-form-field{
+    font-size: 14px;
+    width: 100%;
+}
+.poco-stock {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .advertencia-stock {
+    color: orange;
+    font-weight: bold;
+  }
+  
+  .alerta-bajo-stock {
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .alerta-bajo-stock mat-icon {
+    margin-right: 10px;
+  }
+  

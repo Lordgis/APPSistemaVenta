@@ -1,0 +1,26 @@
+/* Estilo para la barra lateral */
+mat-sidenav {
+    display: flex;
+    background-color: #292929; /* Un tono más oscuro que el color actual */
+    color: #ffffff; /* Texto en blanco para contrastar */
+}
+
+/* Estilo para la fila de la barra de herramientas */
+mat-toolbar-row {
+    background-color: #292929; /* Un tono un poco más claro que el fondo de la barra lateral */
+}
+
+/* Estilo para los títulos */
+h1, label {
+    color: #f1bb1a; /* Mantenemos el color amarillo actual */
+}
+
+/* Estilo para los elementos de la lista */
+.mat-list-item {
+    color: #ffffff; /* Texto en blanco para contrastar con el fondo */
+}
+
+/* Estilo para el contenido de la barra lateral */
+.mat-sidenav-content {
+    background-color: #ededed; /* Un tono más claro que el fondo de la barra lateral */
+}

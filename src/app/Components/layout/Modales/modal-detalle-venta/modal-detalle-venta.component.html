@@ -1,0 +1,80 @@
+<!-- archivo: detalle-venta.component.html -->
+<h2 mat-dialog-title>Detalle Venta</h2>
+
+<mat-dialog-content>
+    <mat-grid-list cols="4" rowHeight="70px">
+
+        <mat-grid-tile>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Fecha Registro</mat-label>
+                <input matInput [(ngModel)]="fechaRegistro">
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Numero Venta</mat-label>
+                <input matInput [(ngModel)]="numeroDocumento">
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Tipo de pago</mat-label>
+                <input matInput [(ngModel)]="tipoPago">
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Total</mat-label>
+                <input matInput [(ngModel)]="total">
+            </mat-form-field>
+        </mat-grid-tile>
+
+    </mat-grid-list>
+
+    <h4>Lista de productos</h4>
+
+    <table mat-table [dataSource]="detalleVenta" class="product-table mat-elevation-z2" aria-label="Lista de productos">
+
+        <!-- Columna Producto -->
+        <ng-container matColumnDef="producto">
+            <th mat-header-cell *matHeaderCellDef aria-label="Producto"> Producto </th>
+            <td mat-cell *matCellDef="let element"> {{element.descripcionProducto}} </td>
+        </ng-container>
+
+        <!-- Columna Cliente -->
+        <ng-container matColumnDef="cliente">
+            <th mat-header-cell *matHeaderCellDef aria-label="Cliente"> Cliente </th>
+            <td mat-cell *matCellDef="let element"> {{element.descripcionCliente}} </td>
+        </ng-container>
+
+        <!-- Columna Cantidad -->
+        <ng-container matColumnDef="cantidad">
+            <th mat-header-cell *matHeaderCellDef aria-label="Cantidad"> Cantidad </th>
+            <td mat-cell *matCellDef="let element"> {{element.cantidad}} </td>
+        </ng-container>
+
+        <!-- Columna Precio -->
+        <ng-container matColumnDef="precio">
+            <th mat-header-cell *matHeaderCellDef aria-label="Precio"> Precio </th>
+            <td mat-cell *matCellDef="let element"> {{element.precioTexto}} </td>
+        </ng-container>
+
+        <!-- Columna Total -->
+        <ng-container matColumnDef="total">
+            <th mat-header-cell *matHeaderCellDef aria-label="Total"> Total </th>
+            <td mat-cell *matCellDef="let element"> {{element.totalTexto}} </td>
+        </ng-container>
+
+        <!-- Filas de encabezado y datos -->
+        <tr mat-header-row *matHeaderRowDef="columnasTabla"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnasTabla;"></tr>
+
+    </table>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close cdkFocusInitial color="warn">Volver</button>
+</mat-dialog-actions>

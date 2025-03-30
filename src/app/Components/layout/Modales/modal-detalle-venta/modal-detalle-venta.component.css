@@ -1,0 +1,25 @@
+table{
+    width: 100%;
+
+}.full-width {
+    width: 95%;
+}
+
+.product-table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.product-table th, .product-table td {
+    padding: 8px;
+    text-align: left;
+}
+
+.product-table th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+}
+
+.product-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}

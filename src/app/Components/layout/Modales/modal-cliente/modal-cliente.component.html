@@ -1,0 +1,60 @@
+<h1 mat-dialog-title>{{ tituloAccion }} Cliente</h1>
+<mat-dialog-content>
+  <form [formGroup]="formularioCliente" (ngSubmit)="guardarEditar_Cliente()">
+    <mat-grid-list cols="1" rowHeight="80px">
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Nombres" formControlName="nombre">
+          <mat-error *ngIf="formularioCliente?.get('nombre')?.invalid && formularioCliente?.get('nombre')?.touched">
+            El nombre es requerido.
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Apellidos" formControlName="apellidos">
+          <mat-error *ngIf="formularioCliente?.get('apellidos')?.invalid && formularioCliente?.get('apellidos')?.touched">
+            Los apellidos son requeridos.
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Teléfono" formControlName="telefono">
+          <mat-error *ngIf="formularioCliente?.get('telefono')?.invalid && formularioCliente?.get('telefono')?.touched">
+            El teléfono es requerido.
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Correo" formControlName="correo">
+          <mat-error *ngIf="formularioCliente?.get('correo')?.invalid && formularioCliente?.get('correo')?.touched">
+            El correo es requerido y debe ser válido.
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <input matInput placeholder="Dirección" formControlName="direccion">
+          <mat-error *ngIf="formularioCliente?.get('direccion')?.invalid && formularioCliente?.get('direccion')?.touched">
+            La dirección es requerida.
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close color="warn">Volver</button>
+  <button mat-raised-button color="primary" [disabled]="formularioCliente.invalid" type="submit"
+  (click)="guardarEditar_Cliente()">
+    {{ botonAccion }}
+  </button>
+</mat-dialog-actions>
