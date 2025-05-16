@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  [x: string]: any;
   title = 'Mamita´scell';
+  formulariologin: any;
+  LoginComponent: any;
 }

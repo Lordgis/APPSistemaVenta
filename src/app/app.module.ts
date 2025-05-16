@@ -23,13 +23,20 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDatepickerModule } from '@angular/material/datepicker';  // Agregar MatDatepickerModule
 import { MatNativeDateModule } from '@angular/material/core';  // Agregar MatNativeDateModule
 
+
 import { SharedModule } from './Reutilizable/shared/shared.module';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component2Component } from './component2/component2.component';
+
 
 @NgModule({
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+
   declarations: [
     AppComponent,
     LoginComponent,
     LayoutComponent,
+    Component2Component,
   ],
   imports: [
     BrowserModule,

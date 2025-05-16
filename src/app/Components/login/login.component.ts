@@ -6,6 +6,7 @@ import { Login } from 'src/app/Interfaces/login';
 import { UsuarioService } from 'src/app/Services/usuario.service';
 import { UtilidadService } from 'src/app/Reutilizable/utilidad.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,9 +14,13 @@ import { UtilidadService } from 'src/app/Reutilizable/utilidad.service';
 })
 export class LoginComponent implements OnInit {
 
+  isCheck = false;
   formularioLogin:FormGroup;
   ocultarPassword:boolean = true;
   mostrarLoading:boolean= false;
+  static controlname: any;
+  form: any;
+  static formulariologin: any;
 
   constructor(
     private fb:FormBuilder,
@@ -45,6 +50,7 @@ export class LoginComponent implements OnInit {
     this._usuarioServicio.iniciarSesion(request).subscribe({
       next: (data) => {
         if(data.status){
+          this.isCheck = true;
           this._utilidadServicio.guardarSesionUsuario(data.value);
           this.router.navigate(["pages"])
         }else
